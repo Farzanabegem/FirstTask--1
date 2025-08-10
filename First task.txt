@@ -1,0 +1,184 @@
+
+
+      1.Create methods for addition, subtraction, multiplication, division.
+
+     class  Firsttask
+
+
+          {
+	public static void main(String[] args) 
+	{
+		
+		int a=10,b=20;
+			System.out.println(a+b);
+			System.out.println(a-b);
+			System.out.println(a*b);
+			System.out.println(a/b);
+			System.out.println(a%b);
+	}
+        }
+
+
+   2.Use Scanner to get user input.
+
+     import java.util.Scanner;
+
+public class UserInputExample {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input
+        Scanner scanner = new Scanner(System.in);
+
+        // Ask the user for their name
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+
+        // Ask the user for their age
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        // Display the collected input
+        System.out.println("Hello, " + name + "! You are " + age + " years old.");
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
+
+
+3.Use a loop to allow multiple calculations until the user exits.
+
+     import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String continueCalculation = "yes";
+
+        while (continueCalculation.equalsIgnoreCase("yes")) {
+            // Get the numbers from the user
+            System.out.print("Enter the first number: ");
+            double num1 = scanner.nextDouble();
+
+            System.out.print("Enter the second number: ");
+            double num2 = scanner.nextDouble();
+            scanner.nextLine(); // Consume the newline character
+
+            // Perform a calculation (e.g., addition)
+            double result = num1 + num2;
+
+            // Print the result
+            System.out.println("The result of " + num1 + " + " + num2 + " is: " + result);
+
+            // Ask the user if they want to do another calculation
+            System.out.print("Do you want to perform another calculation? (yes/no): ");
+            continueCalculation = scanner.nextLine();
+        }
+
+        System.out.println("Exiting the calculator. Goodbye!");
+        scanner.close();
+    }
+}
+1.What is method overloading?
+ A .  Method overloading is a feature in Java that allows a class to have more than one method with the same name, but different parameters.
+     public class Calculator {
+    // Overloaded method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Overloaded method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+2.How do you handle divide-by-zero?
+    You can handle divide-by-zero errors by using a conditional statement (if statement) to check if the divisor is zero before performing the division. This prevents a ArithmeticException from being thrown.
+    public class DivisionExample {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 0;
+
+        if (b != 0) {
+            System.out.println(a / b);
+        } else {
+            System.out.println("Error: Cannot divide by zero.");
+        }
+    }
+}
+
+
+3.Difference between == and .equals()?
+   == is an operator used to compare the memory addresses of two objects. For primitive data types (like int, char, double), it checks if their values are equal. For objects, it checks if they are the exact same object in memory.
+
+.equals() is a method used to compare the content of two objects. Most classes, especially String, override this method to provide a meaningful comparison of their internal data.
+
+4.What are the basic data types in Java?
+   The basic data types in Java are called primitive data types. There are eight of them, categorized into four groups:
+
+Integers: byte, short, int, long
+
+Floating-point: float, double
+
+Characters: char
+
+Boolean: boolean
+
+These are not objects and are stored directly in memory.
+  
+5.How is Scanner used for input?
+   The Scanner class is used to get user input from the console.
+
+Import: You must first import the java.util.Scanner class.
+
+Instantiate: Create a Scanner object, typically with System.in as the source, like so: Scanner scanner = new Scanner(System.in);.
+
+Use methods: Call methods like nextLine(), nextInt(), or nextDouble() to read different types of input from the user. 
+import java.util.Scanner;
+
+public class UserInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.println("Hello, " + name);
+        scanner.close(); // Close the scanner when done
+    }
+}
+
+6.Explain the role of a loop.
+   A loop is a control structure used to repeatedly execute a block of code as long as a certain condition is true. Loops are essential for automating repetitive    tasks, iterating over collections (like arrays), and processing data without writing the same code multiple times.
+
+7.Difference between while and for loop?
+  Feature	for loop	                                                                                while loop
+Primary Use	When the number of iterations is known beforehand (e.g., iterating through an array        When the number of iterations is unknown and the loop                      continues as long as a condition is true.
+Structure	All control parts (initialization, condition, increment/decrement) are in one line.	The initialization and increment/decrement are typically                       handled outside of the loop's condition.
+Syntax	            for (init; condition; update) { ... }	                                                while (condition) { ... }
+
+
+
+8.What is the JVM?
+   The JVM (Java Virtual Machine) is an abstract machine that provides the runtime environment for Java bytecode to be executed. When a Java program is compiled, it's converted into bytecode, which is then run by the JVM on any platform that has a compatible JVM installed. It's the core component that enables Java's platform independence.
+
+
+
+9.How is Java platform-independent?
+  Java is platform-independent because its source code is compiled into bytecode, not into machine code for a specific operating system. The JVM then interprets and executes this bytecode. Since a JVM is available for almost every operating system (Windows, macOS, Linux, etc.), the same compiled Java program can run on any of these platforms without modification.
+
+
+
+
+
+10.How do you debug a Java program?
+  o debug a Java program, you can use an Integrated Development Environment (IDE) like IntelliJ IDEA, Eclipse, or NetBeans. The basic steps are:
+
+Set breakpoints: Place breakpoints at specific lines of code where you suspect an issue.
+
+Run in debug mode: Start the program in "debug" mode.
+
+Step through: Use commands like "Step Into," "Step Over," and "Step Out" to execute the code line by line.
+
+Inspect variables: While stepping through, you can inspect the values of variables to see if they are what you expect. This helps you pinpoint where the logic is failing.
+
